@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import TripCard from './components/TripCard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TripCard
+      image1="https://guidetopakistan.pk/wp-content/uploads/2021/11/Pak.Monument-petals3.jpg"
+      image2="https://guidetopakistan.pk/wp-content/uploads/2021/11/Pak.Monument-petals3.jpg"
+      image3="https://guidetopakistan.pk/wp-content/uploads/2021/11/Pak.Monument-petals3.jpg"
+      title="Example Card"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ac nunc eu bibendum. Aliquam consectetur sapien sit amet sem aliquet, a hendrerit eros dignissim."
+    
+      />
     </div>
   );
 }
