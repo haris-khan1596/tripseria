@@ -1,3 +1,4 @@
+/* TripCard.js CSS */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -108,4 +109,59 @@
 
 .btn-view-trip:hover {
   background-color: #023e8a;
+}
+
+/* Navbar.js CSS */
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.navbar-items {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.navbar-item {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar-item:hover {
+  color: #4C68FF;
+}
+
+.navbar-item:last-child {
+  margin-left: auto;
+}
+
+.navbar-create-btn {
+  background-color: #4C68FF;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-create-btn:hover {
+  background-color: #3E54D6;
 }

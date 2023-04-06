@@ -1,10 +1,12 @@
 
 import './App.css';
 import TripCard from './components/TripCard';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div >
+      <Navbar />
       <div className="card-grid">
         <TripCard
         image1="https://guidetopakistan.pk/wp-content/uploads/2021/11/Pak.Monument-petals3.jpg"
