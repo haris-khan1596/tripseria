@@ -2,11 +2,15 @@
 import './App.css';
 import TripCard from './components/TripCard';
 import Navbar from './components/Navbar';
+import SocialSharing from './components/SocialSharing';
+import BudgetTracker from './components/BudgetTracker';
+import InteractiveChecklist from './components/InteractiveChecklist';
 
 function App() {
   return (
     <div >
-      <Navbar />
+      <div>
+      <Navbar /></div>
       <div className="card-grid">
         <TripCard
         image1="https://guidetopakistan.pk/wp-content/uploads/2021/11/Pak.Monument-petals3.jpg"
@@ -73,6 +77,12 @@ function App() {
         rating={4.5}
         price="5000"
         />
+      </div>
+      <div>
+      <SocialSharing
+        />
+        <BudgetTracker/>
+        <InteractiveChecklist/>
       </div>
     </div>
   );
