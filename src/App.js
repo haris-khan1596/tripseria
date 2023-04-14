@@ -5,10 +5,12 @@ import Navbar from './components/Navbar';
 import SocialSharing from './components/SocialSharing';
 import BudgetTracker from './components/BudgetTracker';
 import InteractiveChecklist from './components/InteractiveChecklist';
+import Login from './components/Login';
 
 function App() {
   return (
     <div >
+      <Login />{/* 
       <div>
       <Navbar /></div>
       <div className="card-grid">
@@ -83,7 +85,7 @@ function App() {
         />
         <BudgetTracker/>
         <InteractiveChecklist/>
-      </div>
+      </div>This is a comment within JSX */}
     </div>
   );
 }
