@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Views/Home';
 import Login from './Views/Login';
 import SignUp from './Views/SignUp'
-
+import Layout from './components/Layouts/Layout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +16,7 @@ root.render(
     <BrowserRouter>
     <Routes>
     
-    <Route path="/" element={<Home />} />
+    <Route path="/" element={<Layout><Home /></Layout>} />
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element ={<SignUp/>}/>
     </Routes>

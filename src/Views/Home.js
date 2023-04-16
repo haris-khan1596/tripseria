@@ -1,12 +1,10 @@
 import '../App.css';
 import TripCard from '../components/TripCard';
-import Navbar from '../components/Navbar';
+
 
 function Home(){
     return(
         <div >
-    <div >
-        <Navbar /></div>
         <div style={{
           display: "flex",
         alignItems: "center",
@@ -15,7 +13,7 @@ function Home(){
       }}>
           <h2 >Trips</h2>
         </div>
-\
+
         
         <div className="card-grid">
           <TripCard
@@ -215,7 +213,7 @@ function Home(){
           />
         </div>
         <div>
-        </div>This is a comment within JSX 
+        </div>
       </div>
     );
 }
