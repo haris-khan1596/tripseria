@@ -5,12 +5,13 @@ import Navbar from './components/Navbar';
 import SocialSharing from './components/SocialSharing';
 import BudgetTracker from './components/BudgetTracker';
 import InteractiveChecklist from './components/InteractiveChecklist';
-import Login from './components/Login';
+import Login from './Views/Login';
+import SignUp from './Views/SignUp';
 
 function App() {
   return (
     <div >
-      <Login />{/* 
+      <SignUp />{/* 
       <div>
       <Navbar /></div>
       <div className="card-grid">
@@ -90,4 +91,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
