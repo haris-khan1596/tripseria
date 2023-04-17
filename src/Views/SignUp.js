@@ -16,7 +16,7 @@ function SignUp() {
   return (
     <div className="login-container">
       <div className="image-container">
-        <img src="https://guidetopakistan.pk/wp-content/uploads/2021/11/Pak.Monument-petals3.jpg" alt="Travel" />
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d1755a167506323.642a8efcd9088.jpg" alt="Travel" />
       </div>
       <div className="form-container">
         <div className="logo-container">

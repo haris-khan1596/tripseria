@@ -14,9 +14,7 @@ function NavBar(){
     <Navbar key="lg" bg="light" expand="lg" className="mb-3 fixed-top">
     <Container fluid>
      <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
-      <Navbar.Brand href="/" className='navbar-logo'><h2 style={{
-        paddingLeft: "100px"
-        }}>Tripserio</h2></Navbar.Brand>
+      <Navbar.Brand href="/" className='navbar-logo'><h2 className='justify-content-left'>Tripserio</h2></Navbar.Brand>
        <Navbar.Offcanvas
 id={`offcanvasNavbar-expand-lg`}
 aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
@@ -29,7 +27,7 @@ Offcanvas
 </Offcanvas.Header>
 <Offcanvas.Body>
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="justify-content-center flex-grow-1 pe-3">
+        <Nav className="justify-content-end flex-grow-1 pe-3">
 
           <Nav.Link as={Link} to="/recommended" className='navbar-item'>Recommended Trips</Nav.Link>
           <Nav.Link as={Link} to="/hot" className='navbar-item'>Hot Trips</Nav.Link>

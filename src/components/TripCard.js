@@ -10,24 +10,22 @@ function TripCard(props) {
 
   return (
     <div className="card" style={{ width: '300px'}}>
+      <FontAwesomeIcon icon={faHeart} className="add-to-my-trip-icon" />
       <Carousel>
         <Carousel.Item>
             <div className="carousel-image-container">
                 <img className="d-block w-100" src={props.image1}  alt="First slide"/>
-                <FontAwesomeIcon icon={faHeart} className="add-to-my-trip-icon" />
             </div>
             
         </Carousel.Item>
         <Carousel.Item>
         <div className="carousel-image-container">
             <img className="d-block w-100" src={props.image2}  alt="Second slide"/>
-            <FontAwesomeIcon icon={faHeart} className="add-to-my-trip-icon" />
         </div>
         </Carousel.Item>
         <Carousel.Item>
             <div className="carousel-image-container">
                 <img className="d-block w-100" src={props.image3}  alt="third slide"/>
-                <FontAwesomeIcon icon={faHeart} className="add-to-my-trip-icon" />
             </div>
         </Carousel.Item>
       </Carousel>
