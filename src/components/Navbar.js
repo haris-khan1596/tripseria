@@ -11,7 +11,7 @@ function NavBar(){
       paddingBottom: "85px"
       }}>
         
-    <Navbar key="lg" bg="light" expand="lg" className="mb-3 fixed-top">
+    <Navbar key="lg" expand="lg" className="mb-3 fixed-top">
     <Container fluid>
      <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
       <Navbar.Brand href="/" className='navbar-logo'><h2 className='justify-content-left'>Tripserio</h2></Navbar.Brand>

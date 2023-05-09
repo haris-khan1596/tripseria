@@ -4,7 +4,7 @@ import TripCard from '../components/TripCard';
 
 function Home(){
     return(
-        <div >
+        <div>
         <div style={{
           display: "flex",
         alignItems: "center",
