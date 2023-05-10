@@ -53,4 +53,4 @@ function TripCard(props) {
   );
 }
 
-export default TripCard;
+export default TripCard;

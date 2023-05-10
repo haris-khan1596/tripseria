@@ -156,7 +156,7 @@
 }
 
 .navbar-create-btn {
-  background-color: #4C68FF;
+  background-color: #91305A;;
   color: #fff;
   padding: 10px 20px;
   border-radius: 30px;
@@ -167,7 +167,7 @@
 }
 
 .navbar-create-btn:hover {
-  background-color: #3E54D6;
+  background: #91305A;
 }
 
 /** Check list*/

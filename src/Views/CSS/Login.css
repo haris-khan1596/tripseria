@@ -72,6 +72,7 @@
 .logo {
   font-size: 28px;
   font-weight: bold;
+  font-family: 'Poppins';
 }
 
 
@@ -99,7 +100,7 @@ input {
 input:focus{
   border-bottom: 2px solid #65ee2ef3;
 }
-button {
+.form-container button {
   background: #91305A;
   color: #fff;
   width: 100%;
@@ -112,7 +113,7 @@ button {
 #link{
   color: #91305A;
 }
-button:hover {
+.form-container button:hover {
   background: #C7467D;
   box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.25);
 }
