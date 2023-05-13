@@ -5,7 +5,9 @@
   height: 100vh;
   padding: 20px;
   padding-left: 5%;
-  background: linear-gradient(90deg, #356685 0%, #75A8C9 100%);
+  background: url('https://s3-alpha-sig.figma.com/img/2cf2/6395/2ccbb1fb495af900c5ecf1dc81fa2a60?Expires=1684713600&Signature=ohDZVl1iqVMKCU0qX1AnOaDFC7ZYjixantzkDeq4ZsKYbels5SG4cooA5kLDzhp~j1d5ug0hTVGekmyf3Se~CPMBNnuVRYr~IKHtCebcX5T1wiVcVFQhxxyJS2wSwCFtDoQscCS3928HoCDZn-K4eFfK2UBmeBpNAqcS6HgWWdYzv~Xr3BYB7pt0NmFdU4ujm9VGCJv5tmSXWPyVclkgp4T8x2-Kag9xDwVoRnnV3B83xhOdkFOJBnM0EU8Kf~S4lJa7kteD0NNE2lWp19lEp0y~VhdjAU3dkQnc0DImYkYalsPKgdgN~2iEBMWh25Vxso4Wf3ifvsyB8Xq5m2tfUw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .image-container {
@@ -44,18 +46,20 @@
 .form-container {
   flex: 1;
   display: flex;
-  justify-content: left;
-  height: 80%;
+  justify-content: center;
+  height: fit-content;
   margin-right: 20px;
   align-items: center;
   flex-direction: column;
   padding: 10px;
-  background:#4B789B;
+  background:#f2f2f2;
+  opacity: 85%;
   box-shadow: -6px -6px 12px rgba(0, 0, 0, 0.25), 6px 6px 12px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
-  color: #fff;
+  color: #2484CF;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 30% ;
 }
 .form-container form{
   margin-top: 5%;
@@ -66,7 +70,7 @@
   color: #fff;
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: calc(45%-0.1rem);
 }
 
 .logo {
@@ -75,7 +79,17 @@
   font-family: 'Poppins';
 }
 
-
+.check-box{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+#remember{
+  display: inline-flex;
+  position: relative;
+  top: 24px;
+  left:-68px;
+}
 h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -90,19 +104,19 @@ input {
   width: 100%;
   padding: 0px;
   padding-left: 2px;
-  color: #fff;
+  color: #202020;
   border: none;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #B7ABAB;
   margin-bottom: 20px;
   background: transparent;
   outline: none;
 }
 input:focus{
-  border-bottom: 2px solid #65ee2ef3;
+  border-bottom: 2px solid rgba(27, 29, 26, 0.953);
 }
 .form-container button {
-  background: #91305A;
-  color: #fff;
+  background: #2484CF;
+  color: #f2f2f2;
   width: 100%;
   border: none;
   border-radius: 5px;
@@ -111,13 +125,14 @@ input:focus{
   margin-bottom: 20px;
 }
 #link{
-  color: #91305A;
+  color: #2484CF;
 }
 .form-container button:hover {
-  background: #C7467D;
+  background: #2484CF;
   box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
-p {
+.form-container p:nth-child(4)  {
+  color:  #202020;
   margin-top: 20px;
 }

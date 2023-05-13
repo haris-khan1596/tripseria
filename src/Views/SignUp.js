@@ -42,9 +42,6 @@ function SignUp() {
         </form>
         <p>Already have an account? <Link id="link" to="/login">Login</Link></p>
       </div>
-      <div className="image-container">
-        <img src={process.env.PUBLIC_URL +"Assets/login.svg"} alt="Travel" />
-      </div>
     </div>
   );
 }
