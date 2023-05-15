@@ -5,9 +5,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './Views/Home';
+import Ghome from './Views/GuestHome';
 import Login from './Views/Login';
 import SignUp from './Views/SignUp'
+import Home from './Views/Home';
 import Layout from './components/Layouts/Layout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +17,8 @@ root.render(
     <BrowserRouter>
     <Routes>
     
-    <Route path="/" element={<Layout><Home /></Layout>} />
+    <Route path="/" element={<Layout><br/><br/><br/><Home /></Layout>} />
+    <Route path='/home' element={<Layout><Ghome /></Layout>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element ={<SignUp/>}/>
     </Routes>
