@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->string('picture');
             $table->string('name');
             $table->string('address');
             $table->longText('comment');
