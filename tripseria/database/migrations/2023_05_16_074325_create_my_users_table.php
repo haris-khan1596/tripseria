@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('contact');
+            $table->enum('type',['planner','user'])->default('user');
             $table->timestamps();
         });
     }

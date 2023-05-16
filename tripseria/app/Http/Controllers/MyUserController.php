@@ -29,7 +29,8 @@ class MyUserController extends Controller
         $token = $user->createToken('authToken')->plainTextToken;
 
         return response()->json([
-            'user' => $user,
+            'user' => $user->id,
+            'isplanner'=> $user->type=='planner',
             'token' => $token,
         ]);
     } catch (ValidationException $exception) {
@@ -52,13 +53,46 @@ class MyUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'type' => 'user',
         ]);
 
         // Optionally, you can generate a token for the newly registered user
         $token = $user->createToken('authToken')->plainTextToken;
 
         return response()->json([
-            'user' => $user,
+            'user' => $user->id,
+            'isplanner'=> $user->type=='planner',
+            'token' => $token,
+        ], 201);
+    } catch (ValidationException $exception) {
+        return response()->json(['error' => $exception->errors()], 422);
+    }
+}
+/**
+     * Store a newly created resource in storage.
+     */
+    public function signupPlanner(Request $request)
+{
+    try {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:myusers',
+            'password' => 'required|min:6',
+        ]);
+
+        $user = MyUsers::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'type' => 'planner',
+        ]);
+
+        // Optionally, you can generate a token for the newly registered user
+        $token = $user->createToken('authToken')->plainTextToken;
+
+        return response()->json([
+            'user' => $user->id,
+            'isplanner'=> $user->type=='planner',
             'token' => $token,
         ], 201);
     } catch (ValidationException $exception) {

@@ -12,7 +12,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Reviews::all();
+        $reviews = Reviews::all()->take(4);
 
         return response()->json([
             'reviews' => $reviews,
