@@ -10,6 +10,7 @@ import Login from './Views/Login';
 import SignUp from './Views/SignUp'
 import Home from './Views/Home';
 import Layout from './components/Layouts/Layout';
+import TripList  from './Views/TripList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
     <Route path='/home' element={<Layout><Ghome /></Layout>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element ={<SignUp/>}/>
+    <Route path='/search' element={<TripList/>}/>
     </Routes>
     
     </BrowserRouter>
