@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
+            $table->string('image1');
+            $table->string('image2');
+            $table->string('image3');
+            $table->string('planner');
+            $table->string('from');
+            $table->string('to');
+            $table->string('duration');
+            $table->string('num_ppl');
+            $table->string('total_ppl');
+            $table->double('rating');
+            $table->string('price');
             $table->timestamps();
         });
     }
