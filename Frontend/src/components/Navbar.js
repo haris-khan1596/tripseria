@@ -40,4 +40,5 @@ function NavBar({ navbarLogo, links, navbarbtn }) {
   );
 };
 
+
 export default NavBar;
