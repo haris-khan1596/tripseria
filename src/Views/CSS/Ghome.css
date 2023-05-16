@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); 
-
+/*Hero section*/
 #hero{
     background: url('http://localhost:3000/Assets/hero.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
+  
 }
 #hero-content{
   position: relative;
   padding-top: 100px;
   padding-left:120px;
+  
 }
 #hero h1{
   color: #fff;
@@ -57,10 +59,10 @@
   border: none;
 }
 
-
+/* Trip Section*/
 #trips{
   background-color: #6694AE;
-  padding: 40px 20px;
+  padding: 40px 70px;
 }
 .center{
   text-align: center;
@@ -76,4 +78,93 @@
   font-family: 'Merriweather';
   color: #153041;
   font-size: 56px;
+}
+
+/*Service Section*/
+#services{
+  background-color: #6694AE;
+  padding: 40px 70px;
+}
+.side{
+  text-align: left;
+  height: "100%";
+}
+
+.side h4{
+  color: #F2F2F2;
+  font-size: 20px;
+ font-family: 'poppins';
+}
+
+.side h2{
+  font-family: 'Merriweather';
+  color: #153041;
+  font-size: 56px;
+  margin-bottom: 70px;
+}
+
+
+
+
+#services .services {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0px;
+}
+
+#services .services .service{
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  text-align: left;
+}
+#services .services #content {
+  
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+#services .services .icon{
+  background-color: #F2F2F2;
+  width: 84px;
+  height: 84px;
+  font-size: 40px;
+  border-radius: 15px;
+  margin: 0;
+  margin-right: 28px;
+  color: #153041;
+  
+}
+#services .services .icon span{
+  position: relative;
+  top: 10px;
+  left: 20px;
+  
+}
+
+#services .services .service h3 {
+  font-size: 20px;
+  color: #153041;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#services .services .service p {
+  font-size: 16px;
+  color: #153041;
+  margin-bottom: 5px;
+  opacity: 95%;
+}
+
+/* Reviews Section*/
+#reviews{
+  background-color: #6694AE;
+  padding: 40px 70px;
 }

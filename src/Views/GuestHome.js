@@ -78,9 +78,57 @@ function Ghome() {
           price="5000"
           />
           </div>
+          <hr/>
       </section>
-      <section id="services"></section>
-      <section id="reviews"></section>
+      
+      <section id="services">
+      
+        <div className="side">
+          <h4>HOW WE WORK</h4>
+          <h2>WE OFFER BEST SERVICES</h2></div>
+          <div className="services">
+            <div className="service">
+              <div className="icon"><span class="bi bi-geo-alt"></span></div>
+              <div id='service-content'>
+                <h3>Personalized Recommendations</h3>
+                <p>We provide personalized recommendations for activities, restaurants, 
+                  and accommodations based on a your preferences and budget.</p>
+              </div>
+            </div>
+            <div className="service">
+              <div className="icon"><span class="bi bi-geo-alt"></span></div>
+              <div id='service-content'>
+                <h3>Customize Trips</h3>
+                <p>You can book your entire vacation, including restaurants
+                  , hotels, and activities, all in one place</p>
+              </div>
+            </div>
+            <div className="service">
+              <div className="icon"><span><img src="/Assets/pre-mage.svg"></img></span></div>
+              <div id='service-content'>
+                <h3>Pre-made trip</h3>
+                <p>You can also choose pre-made trips planned by 
+                  experienced planners to enjoy the journey with your family.</p>
+              </div>
+            </div>
+            <div className="service">
+              <div className="icon"><span class="bi bi-chat-right-text"></span></div>
+              <div id='service-content'>
+                <h3>Chat and negotiation</h3>
+                <p>Trip planners can communicate with the customers about their pre-planned trips to increase their marketing 
+                  it provides them the platform to showcase their trips to large amount of customers.</p>
+              </div>
+            </div>
+            
+          </div>
+          <hr />
+      </section>
+      <section id="reviews">
+        <div className="center">
+          <h4>Testimonial</h4>
+          <h2>What Our Clients Says About Us</h2>
+        </div>
+      </section>
       <section id="contact"></section>
     </div>
   );
