@@ -119,9 +119,11 @@ function Ghome() {
                 <h3>Chat and negotiation</h3>
                 <p>Trip planners can communicate with the customers about their pre-planned trips to increase their marketing 
                   it provides them the platform to showcase their trips to large amount of customers.</p>
+                  
               </div>
+              
             </div>
-            
+            <button>Join us as Trip Planner</button>
           </div>
           <hr />
       </section>

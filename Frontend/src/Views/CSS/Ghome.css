@@ -162,6 +162,25 @@
   margin-bottom: 5px;
   opacity: 95%;
 }
+#services button {
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: #352cb8;
+  transition: background-color 0.3s ease-in-out;
+  max-width: fit-content;
+  position: relative;
+  left: 130px;
+}
+
+#services button:hover {
+  background: #023e8a;
+}
 
 /* Reviews Section*/
 #reviews{
