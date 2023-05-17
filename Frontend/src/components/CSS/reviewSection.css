@@ -1,0 +1,28 @@
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 36px;
+    justify-items: center;
+    align-items: start;
+    padding: 20px;
+  }
+  
+  .reviews-row {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .reviews-row {
+      flex-basis: 48%;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .reviews-row {
+      flex-basis: 23%;
+    }
+  }
+  

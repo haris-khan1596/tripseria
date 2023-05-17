@@ -131,6 +131,12 @@
   font-size: 28px;
   font-weight: bold;
   font-family: 'poppins';
+  color: #004974;
+}
+.navbar-color .navbar-logo{
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'poppins';
   color: #fff;
 }
 
@@ -140,6 +146,9 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .navbar-item-text{
+  color: #4DBDFC;
+}
+.navbar-color .navbar-item-text{
   color: #fff;
 }
 

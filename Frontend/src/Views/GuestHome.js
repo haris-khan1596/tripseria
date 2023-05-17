@@ -1,6 +1,8 @@
 import "../App.css";
 import "./CSS/Ghome.css";
 import TripCard from '../components/TripCard';
+import Reviews from "../components/reviewSection";
+import Contact from "../components/Contact";
 
 function Ghome() {
   return (
@@ -123,13 +125,8 @@ function Ghome() {
           </div>
           <hr />
       </section>
-      <section id="reviews">
-        <div className="center">
-          <h4>Testimonial</h4>
-          <h2>What Our Clients Says About Us</h2>
-        </div>
-      </section>
-      <section id="contact"></section>
+      <Reviews />
+      <Contact />
     </div>
   );
 }
