@@ -13,6 +13,7 @@ import Home from './Views/Home';
 import Layout from './components/Layouts/Layout';
 import TripList  from './Views/TripList';
 import TravelPlanner from './Views/createTrip';
+import UserProf from './Views/UserProfile';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,13 +22,14 @@ root.render(
     <BrowserRouter>
     <Routes>
     
-    <Route path="/" element={<Layout><br/><br/><br/><Home /></Layout>} />
-    <Route path='/home' element={<Layout><Ghome /></Layout>}/>
+    <Route path="/" element={<Layout><Ghome /></Layout>} />
+    <Route path='/trips' element={<Layout><br/><br/><br/><Home /></Layout>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element ={<SignUp/>}/>
     <Route path='/search' element={<TripList/>}/>
     <Route path='/planner/signup' element={<SignUp />}/>
     <Route path='/planner/trips' element={<TravelPlanner />}/>
+    <Route path='/user/profile' element={<UserProf />}/>
     </Routes>
     </BrowserRouter>
 
