@@ -26,11 +26,16 @@ root.render(
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element ={<SignUp/>}/>
     <Route path='/search' element={<TripList/>}/>
-    <Route path='/planner/trips' element={<TravelPlanner />}/>
+<<<<<<< HEAD
     
+    
+=======
+    <Route path='/planner/signup' element={<SignUp />}/>
+>>>>>>> 84e6c99f3ad63290c107a147fb97de59893125b9
+<Route path='/planner/trips' element={<TravelPlanner />}/>
     </Routes>
-    
     </BrowserRouter>
+
   </React.StrictMode>
 );
 
