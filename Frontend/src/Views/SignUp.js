@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./CSS/Login.css"; // import CSS file
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from 'axios';
 
 function SignUp() {
@@ -17,9 +17,9 @@ function SignUp() {
     let apiEndpoint = "";
     
     if (currentUrl.includes("/planner")) {
-      apiEndpoint = "http://10.7.92.226:8000/api/planner/signup"; // For planner signup
+      apiEndpoint = localStorage.getItem('api')+"/planner/signup"; // For planner signup
     } else {
-      apiEndpoint = "http://10.7.92.226:8000/api/signup"; // For simple user signup
+      apiEndpoint = localStorage.getItem('api')+"/signup"; // For simple user signup
     }
   
     // Create the user object to send in the request body
@@ -38,10 +38,9 @@ function SignUp() {
   console.log(req);
   axios.post(apiEndpoint,{...user, _token: "harisharis"})
     //fetch(apiEndpoint, req)
-      .then((response) => {if (!response.ok) {
-            throw new Error("Signup failed");
-          }
-          return response.json();
+      .then((response) => {
+          console.log(response.status);
+          return response.data;
         })
       .then((data) => {
         // Handle the response from the server
