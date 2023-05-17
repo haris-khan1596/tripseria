@@ -17,7 +17,7 @@ function Ghome() {
             Repeat.
           </h1>
           <h4>YOUR PERSONALIZED TRAVEL COMPANION.</h4>
-          <div id="Searchbar"><i class="bi bi-question-circle"></i><input type='text' placeholder="Where you want to go?"/><button>Search Location</button></div>
+          <form action="/trips" method="get"><div id="Searchbar"><i class="bi bi-question-circle"></i><input type='text' name="query" placeholder="Where you want to go?"/><button>Search Location</button></div></form>
 
         </div>
       </section>

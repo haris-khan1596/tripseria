@@ -27,8 +27,8 @@ function TravelPlanner(){
                 <input type="file" className="form-control" id="image3" />
               </div>
               <div className="form-group">
-                <label htmlFor="plannerName">Planner Name</label>
-                <input type="text" className="form-control" id="plannerName" />
+                
+                <input type="hidden" className="form-control" id="plannerName" />
               </div>
               <div className="form-group">
                 <label htmlFor="from">From</label>

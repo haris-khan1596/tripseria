@@ -100,7 +100,7 @@ label {
   margin-bottom: 10px;
 }
 
-input {
+.form-container input {
   width: 100%;
   padding: 0px;
   padding-left: 2px;
@@ -111,7 +111,7 @@ input {
   background: transparent;
   outline: none;
 }
-input:focus{
+.form-container input:focus{
   border-bottom: 2px solid rgba(27, 29, 26, 0.953);
 }
 .form-container button {

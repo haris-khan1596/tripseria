@@ -7,6 +7,12 @@ import numeral from 'numeral';
 
 function TripCard(props) {
     const formattedPrice = numeral(props.price).format('₨0,0.00');
+    const handleSubmit = (event) => {
+      event.preventDefault();  
+      // handle api 
+      alert("Successfully booked");
+      
+    }
 
   return (
     <div className="card" style={{ width: '300px'}}>
@@ -46,7 +52,7 @@ function TripCard(props) {
         </div>
         <div>PKR {formattedPrice}</div>
         </div>
-        <button className='btn-view-trip'>View Plan</button>
+        <button onClick={handleSubmit} className='btn-view-trip'>Book</button>
         </div>
       </div>
     </div>
