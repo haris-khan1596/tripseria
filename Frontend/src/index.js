@@ -14,7 +14,8 @@ import Layout from './components/Layouts/Layout';
 import TripList  from './Views/TripList';
 import TravelPlanner from './Views/createTrip';
 import { isloggedIn, isplanner } from './helper';
-//import UserProf from './Views/UserProfile';
+import UserProf from './Views/UserProfile';
+import PlannerProf from './Views/PlannerProfile';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -35,7 +36,8 @@ root.render(
     <Route path='/search' element={<TripList/>}/>
     <Route path='/planner/signup' element={isloggedIn()?isplanner()?<Navigate to='/planner/profile' />:<Navigate to='/user/profile' />:<SignUp />}/>
     <Route path='/planner/trips' element={isloggedIn()&&isplanner() ?<TravelPlanner />:<Navigate to='/planner/signup' />}/>
-
+    <Route path='/planner/profile' element={<PlannerProf/>}/>
+    <Route path='/user/profile' element={<UserProf/>}/>
     <Route path='*' element={<Navigate to='/' />}/>
   {/* <Route path='/user/profile' element={<UserProf />}/> */}
     </Routes>
