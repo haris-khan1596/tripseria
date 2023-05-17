@@ -1,0 +1,59 @@
+#contact .contacts {
+    margin-top: 40px;
+  }
+  
+  #contact form .form-group {
+    margin-bottom: 20px;
+  }
+  
+
+  #contact form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow-y: scroll;
+    font-size: 16px;
+    min-height: 200px;
+    max-height: 200px;
+  }
+
+  #contact form textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  #contact form textarea::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+  #email-sub{
+    background-color: #D9D9D9;
+    max-width: fit-content;
+    color: #2484CF;
+  }
+  #email-sub i{
+    position: relative;
+    top: 4px;
+    margin: 5px;
+    font-size: 24px;
+  }
+  #email-sub input[type=text], 
+  #email-sub input::placeholder
+  {
+    background: transparent;
+    border: none;
+    color: #2484CF;
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 5px;
+    width: 40rem;
+  }
+  #email-sub button{
+    background-color: #2484CF;
+    color: #fff;
+    font-size: 16px;
+    margin: 2px 5px;
+    padding: 10px 18px;
+    border: none;
+  }

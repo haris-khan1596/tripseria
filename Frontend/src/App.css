@@ -131,6 +131,12 @@
   font-size: 28px;
   font-weight: bold;
   font-family: 'poppins';
+  color: #004974;
+}
+.navbar-color .navbar-logo{
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'poppins';
   color: #fff;
 }
 
@@ -140,6 +146,9 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .navbar-item-text{
+  color: #4DBDFC;
+}
+.navbar-color .navbar-item-text{
   color: #fff;
 }
 
@@ -268,4 +277,63 @@
   .checklist-form button[type='submit'] {
     border-radius: 4px;
   }
+}
+
+
+/*Footer.js Css*/
+/* Add this CSS code to your stylesheet or component */
+
+footer {
+  background-color: #153041;
+  color: #fff;
+  padding: 20px;
+}
+
+.container {
+  max-width: 100%;
+  padding: 40px 70px;
+  margin: 0 auto;
+}
+
+.container .row h4 {
+  font-size: 35px;
+}
+
+.container .row h5 {
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.icon-foot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #bcd4e2;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.fab {
+  font-size: 30px;
+  color: #16188a;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+.mt-3 {
+  margin-top: 15px;
 }

@@ -5,12 +5,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import Ghome from './Views/GuestHome';
 import Login from './Views/Login';
 import SignUp from './Views/SignUp'
 import Home from './Views/Home';
 import Layout from './components/Layouts/Layout';
 import TripList  from './Views/TripList';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
