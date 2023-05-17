@@ -76,6 +76,7 @@ class MyUserController extends Controller
     public function signupPlanner(Request $request)
     {
         try {
+            Log::info('API Response:', $request->toArray());
             $request->validate([
                 'name' => 'required',
                 'email' => 'required|email|unique:my_users',

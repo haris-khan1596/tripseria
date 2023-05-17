@@ -25,9 +25,10 @@ root.render(
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element ={<SignUp/>}/>
     <Route path='/search' element={<TripList/>}/>
+    <Route path='/planner/signup' element={<SignUp />}/>
     </Routes>
-    
     </BrowserRouter>
+
   </React.StrictMode>
 );
 

@@ -17,7 +17,7 @@ function SignUp() {
     let apiEndpoint = "";
     
     if (currentUrl.includes("/planner")) {
-      apiEndpoint = "http://127.0.0.1:8000/api/planner/signup"; // For planner signup
+      apiEndpoint = "http://10.7.92.226:8000/api/planner/signup"; // For planner signup
     } else {
       apiEndpoint = "http://10.7.92.226:8000/api/signup"; // For simple user signup
     }
