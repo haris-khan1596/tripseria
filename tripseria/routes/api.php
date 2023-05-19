@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyUserController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\TripController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/signup', [MyUserController::class , 'signup']);
 Route::post('planner/signup',[MyUserController::class , 'signupPlanner']);
+Route::get('reviews',[ReviewController::class,'index']);
+Route::get('trips/{n}',[TripController::class,'get4']);
+Route::get('trips/{prompt}/get',[TripController::class,'search']);
+Route::get('trips/get',[TripController::class,'search']);

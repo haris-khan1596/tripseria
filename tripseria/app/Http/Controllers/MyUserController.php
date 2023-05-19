@@ -30,7 +30,7 @@ class MyUserController extends Controller
 
 
             return response()->json([
-                'user' => $user->id,
+                'user' => $user,
                 'isplanner' => $user->type == 'planner',
             ]);
         } catch (ValidationException $exception) {

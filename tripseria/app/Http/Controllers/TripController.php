@@ -10,17 +10,23 @@ class TripController extends Controller
 {
     public function index()
     {
-        $trips = Trips::all();
+        $trips = Trips::where('num_ppl','<=','total_ppl')->get();
 
         return response()->json([
             'trips' => $trips,
         ]);
     }
-    public function search(Request $request){
-        $request->validate(['prompt'=>'required']);
-        $trips = Trips::where('to', 'LIKE', '%' . $request->prompt . '%')
-        ->orWhere('from', 'LIKE', '%' . $request->prompt . '%')
-        ->orWhere('planner', 'LIKE', '%' . $request->prompt . '%')->get();
+    public function get4(){
+        $trips = Trips::all()->take(4);
+        return response()->json([
+            'trips' => $trips,
+        ]);
+    }
+    public function search(Request $request, $prompt){
+        $trips = Trips::where('num_ppl','<=','total_ppl')
+        ->where('to', 'LIKE', '%' . $prompt . '%')
+        ->orWhere('from', 'LIKE', '%' . $prompt . '%')
+        ->orWhere('planner', 'LIKE', '%' . $prompt . '%')->get();
         return response()->json([
             'trips' => $trips,
         ]);
@@ -36,7 +42,6 @@ class TripController extends Controller
             'from' => 'required',
             'to' => 'required',
             'duration' => 'required',
-            'num_ppl' => 'required',
             'total_ppl' => 'required',
             'rating' => 'required',
             'price' => 'required',
@@ -49,6 +54,7 @@ class TripController extends Controller
         }
 
         $trip = new Trips($request->all());
+        $trip->num_ppl=0;
 
         $trip->image1 = $request->file('image1')->store('images');
         $trip->image2 = $request->file('image2')->store('images');
@@ -78,7 +84,6 @@ class TripController extends Controller
             'image1' => 'required',
             'image2' => 'required',
             'image3' => 'required',
-            'planner' => 'required',
             'from' => 'required',
             'to' => 'required',
             'duration' => 'required',
@@ -102,6 +107,42 @@ class TripController extends Controller
         ]);
     }
 
+    public function book(Request $request,$id){
+        $trip = Trips::where('id',$id)->first();
+        if ($trip==null) {
+            return response()->json([
+                'message'=>'Trip is not available',
+                'trip'=>$trip,
+            ]);
+        }
+        if ($trip->num_ppl+1>$trip->total_ppl) {
+            return response()->json([
+                'message'=>'Trip has no vacancy',
+                'trip'=>$trip,
+            ]);
+        }
+        $trip->num_ppl=$trip->num_ppl+1;
+        $trip->save();
+        return response()->json([
+            'message'=>'Trip Booked Successfully',
+            'trip'=>$trip,
+        ]);
+    }
+    public function unbook(Request $request,$id){
+        $trip = Trips::where('id',$id)->first();
+        if ($trip==null) {
+            return response()->json([
+                'message'=>'Trip is not available',
+                'trip'=>$trip,
+            ]);
+        }
+        $trip->num_ppl=$trip->num_ppl-1;
+        $trip->save();
+        return response()->json([
+            'message'=>'Trip Booking has been cancelled',
+            'trip'=>$trip, 
+        ]);
+    }
     public function destroy($id)
     {
         $trip = Trips::findOrFail($id);
