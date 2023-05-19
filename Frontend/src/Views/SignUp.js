@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./CSS/Login.css"; // import CSS file
-import { Link, Navigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import axios from 'axios';
 
 function SignUp() {
@@ -17,9 +17,9 @@ function SignUp() {
     let apiEndpoint = "";
     
     if (currentUrl.includes("/planner")) {
-      apiEndpoint = localStorage.getItem('api')+"/planner/signup"; // For planner signup
+      apiEndpoint = localStorage.getItem('api')+"planner/signup"; // For planner signup
     } else {
-      apiEndpoint = localStorage.getItem('api')+"/signup"; // For simple user signup
+      apiEndpoint = localStorage.getItem('api')+"signup"; // For simple user signup
     }
   
     // Create the user object to send in the request body
@@ -44,6 +44,9 @@ function SignUp() {
         })
       .then((data) => {
         // Handle the response from the server
+        localStorage.setItem('isloggedIn',true);
+        localStorage.setItem('isplanner',data.isplanner);
+        localStorage.setItem('user',JSON.stringify(data.user));
         console.log(data);
         // Reset the form fields
         setName("");

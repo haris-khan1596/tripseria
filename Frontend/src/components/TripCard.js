@@ -10,6 +10,17 @@ function TripCard(props) {
     const handleSubmit = (event) => {
       event.preventDefault();  
       // handle api 
+      // console.log(props);
+      if (localStorage.getItem('cart')) {
+        const cart=JSON.parse(localStorage.getItem('cart')).carts;
+        cart.push(JSON.stringify(props));
+        localStorage.setItem('cart',JSON.stringify({"carts":cart}));
+      } else {
+        const cart = [];
+        cart.push(JSON.stringify(props));
+        localStorage.setItem('cart',JSON.stringify({"carts":cart}));
+      }
+      
       alert("Successfully booked");
       
     }
