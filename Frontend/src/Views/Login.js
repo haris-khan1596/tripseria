@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./CSS/Login.css"; // import CSS file
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,7 +10,37 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`Email: ${email}, Password: ${password}`);
-    // Call API endpoint to verify login details
+  
+    // Determine the API endpoint based on the current URL
+    const currentUrl = window.location.href;
+    let apiEndpoint = localStorage.getItem('api')+"login";
+  
+    // Create the user object to send in the request body
+    const user = {
+      email: email,
+      password: password
+    };
+
+  axios.post(apiEndpoint,{...user, _token: "harisharis"})
+    //fetch(apiEndpoint, req)
+      .then((response) => {
+          console.log(response.status);
+          return response.data;
+        })
+      .then((data) => {
+        // Handle the response from the server
+        localStorage.setItem('isloggedIn',true);
+        localStorage.setItem('isplanner',data.isplanner);
+        localStorage.setItem('user',JSON.stringify(data.user));
+        console.log(data);
+        // Reset the form fields
+        setEmail("");
+        setPassword("");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        console.log("error");
+      });
   };
 
   return (
