@@ -48,7 +48,8 @@
   padding: 0px;
   margin: 0px;
   margin-left: 5px;
-  width: 40rem;
+  max-width: 40rem;
+  min-width: 40rem;
 }
 #Searchbar button{
   background-color: #2484CF;

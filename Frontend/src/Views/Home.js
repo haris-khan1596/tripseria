@@ -41,6 +41,7 @@ function Home(){
         height: "100%"
       }}>
           <h2 >Trips</h2>
+          <form action="/trips" method="get"><div id="Searchbar"><i class="bi bi-question-circle"></i><input type='text' name="query" placeholder="Where you want to go?"/><button>Search Location</button></div></form>
         </div>
 
         {trips.length===0?<preloader/>:
