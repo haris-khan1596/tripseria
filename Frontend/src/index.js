@@ -31,12 +31,12 @@ root.render(
     <Route path='/trips' element={<Layout><br/><br/><br/><Home /></Layout>}/>
     <Route path="/login" element={isloggedIn()?isplanner()?<Navigate to='/planner/profile' />:<Navigate to='/user/profile' />:<Login/>}/>
     <Route path="/signup" element ={isloggedIn()?isplanner()?<Navigate to='/planner/profile' />:<Navigate to='/user/profile' />:<SignUp/>}/>
-    <Route path='/search' element={<TripList/>}/>
+    <Route path='/search' element={<Layout><TripList/></Layout>}/>
     <Route path='/planner/signup' element={isloggedIn()?isplanner()?<Navigate to='/planner/profile' />:<Navigate to='/user/profile' />:<SignUp />}/>
-    <Route path='/planner/trips' element={isloggedIn()&&isplanner() ?<TravelPlanner />:<Navigate to='/planner/signup' />}/>
-    <Route path='/planner/profile' element={<Profile/>}/>
-    <Route path='/planner/create/trip' element={<CreateTrip/>}/>
-    <Route path='/user/profile' element={<Profile/>}/>
+    <Route path='/planner/trips' element={isloggedIn()&&isplanner() ?<Layout><TravelPlanner /></Layout>:<Navigate to='/planner/signup' />}/>
+    <Route path='/planner/profile' element={<Layout><Profile/></Layout>}/>
+    <Route path='/planner/create/trip' element={<Layout><CreateTrip/></Layout>}/>
+    <Route path='/user/profile' element={<Layout><Profile/></Layout>}/>
     <Route path='*' element={<Navigate to='/' />}/>
     </Routes>
     </BrowserRouter>
