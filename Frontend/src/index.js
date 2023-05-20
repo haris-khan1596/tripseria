@@ -12,10 +12,10 @@ import SignUp from './Views/SignUp'
 import Home from './Views/Home';
 import Layout from './components/Layouts/Layout';
 import TripList  from './Views/TripList';
-import TravelPlanner from './Views/createTrip';
 import { isloggedIn, isplanner } from './helper';
 import CreateTrip from './Views/createTrip';
 import Profile from './Views/Profile';
+import PlannerTrips from './Views/PlannerTrips';
 
 
 
@@ -33,7 +33,7 @@ root.render(
     <Route path="/signup" element ={isloggedIn()?isplanner()?<Navigate to='/planner/profile' />:<Navigate to='/user/profile' />:<SignUp/>}/>
     <Route path='/search' element={<Layout><TripList/></Layout>}/>
     <Route path='/planner/signup' element={isloggedIn()?isplanner()?<Navigate to='/planner/profile' />:<Navigate to='/user/profile' />:<SignUp />}/>
-    <Route path='/planner/trips' element={isloggedIn()&&isplanner() ?<Layout><TravelPlanner /></Layout>:<Navigate to='/planner/signup' />}/>
+    <Route path='/planner/trips' element={isloggedIn()&&isplanner() ?<Layout><PlannerTrips /></Layout>:<Navigate to='/planner/signup' />}/>
     <Route path='/planner/profile' element={<Layout><Profile/></Layout>}/>
     <Route path='/planner/create/trip' element={<Layout><CreateTrip/></Layout>}/>
     <Route path='/user/profile' element={<Layout><Profile/></Layout>}/>
