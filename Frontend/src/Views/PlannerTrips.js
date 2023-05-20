@@ -51,4 +51,4 @@ function PlannerTrips() {
         </div>
     );
 }
-export default PlannerTrips
+export default PlannerTrips;
