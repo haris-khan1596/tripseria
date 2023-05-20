@@ -5,17 +5,13 @@ class Header extends React.Component {
   render() {
           
     const links = [
-      {to: '/',text:'About'},
-      { to: '/recommended', text: 'Recommended Trips' },
-      { to: '/hot', text: 'Hot Trips' },
-      { to: '/new', text: 'New Trips' },
-      { to: '/favourites', text: 'Favourite Trips' },
-      { to: '/mytrips', text: 'My Trips' }
+      {to: '/',text:'Home'},
+      { to: '/trips', text: 'Trips' },
     ];
     
     const navbarItems = [
-      { to: '/link1', text: 'Navbar Item 1' },
-      { to: '/link2', text: 'Navbar Item 2' }
+      { to: '/link1', text: 'Signup' },
+      { to: '/link2', text: 'Login' },
     ];
     return (
       

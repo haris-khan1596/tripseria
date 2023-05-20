@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trips;
+use App\Models\MyUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,7 +12,6 @@ class TripController extends Controller
     public function index()
     {
         $trips = Trips::where('num_ppl','<=','total_ppl')->get();
-
         return response()->json([
             'trips' => $trips,
         ]);
@@ -23,8 +23,7 @@ class TripController extends Controller
         ]);
     }
     public function search(Request $request, $prompt){
-        $trips = Trips::where('num_ppl','<=','total_ppl')
-        ->where('to', 'LIKE', '%' . $prompt . '%')
+        $trips = Trips::where('num_ppl','<=','total_ppl')->where('to', 'LIKE', '%' . $prompt . '%')
         ->orWhere('from', 'LIKE', '%' . $prompt . '%')
         ->orWhere('planner', 'LIKE', '%' . $prompt . '%')->get();
         return response()->json([
@@ -35,9 +34,9 @@ class TripController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'image1' => 'required|image',
-            'image2' => 'required|image',
-            'image3' => 'required|image',
+            'image1' => 'required',
+            'image2' => 'required',
+            'image3' => 'required',
             'planner' => 'required',
             'from' => 'required',
             'to' => 'required',
@@ -53,18 +52,33 @@ class TripController extends Controller
             ], 400);
         }
 
-        $trip = new Trips($request->all());
+        $trip = new Trips();
+        $trip->planner=$request->planner;
+        $trip->from=$request->from;
+        $trip->to=$request->to;
+        $trip->duration=$request->duration;
+        $trip->total_ppl=$request->total_ppl;
+        $trip->rating=$request->rating;
+        $trip->price=$request->price;
         $trip->num_ppl=0;
 
-        $trip->image1 = $request->file('image1')->store('images');
-        $trip->image2 = $request->file('image2')->store('images');
-        $trip->image3 = $request->file('image3')->store('images');
+        $trip->image1 = $request->file('image1')->store('public/images');
+        $trip->image2 = $request->file('image2')->store('public/images');
+        $trip->image3 = $request->file('image3')->store('public/images');
         $trip->save();
         return response()->json([
             'message' => 'Trip created successfully',
             'trip' => $trip,
         ], 201);
 
+    }
+    public function showTrips(Request $request,$uid){
+        $user = MyUsers::where('id',$uid)->first();
+        $trips =Trips::where('planner',$user->username)->get();
+        return response()->json([
+            'trips' => $trips,
+        ]);
+        
     }
 
     public function show($id)

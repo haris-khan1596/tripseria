@@ -8,7 +8,7 @@ function TripSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${localStorage.getItem('api')}trips/4`);
+        const response = await axios.get(`${localStorage.getItem('api')}trips/get4`);
         const data = response.data;
         console.log("Trips");
         console.log(data);

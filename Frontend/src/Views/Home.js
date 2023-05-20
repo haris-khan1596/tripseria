@@ -2,6 +2,8 @@ import '../App.css';
 import TripCard from '../components/TripCard';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import preloader from '../components/Preloader';
+
 
 
 function Home(){
@@ -41,7 +43,7 @@ function Home(){
           <h2 >Trips</h2>
         </div>
 
-        
+        {trips.length===0?<preloader/>:
         <div className="card-grid">
         {trips.map((trip) => (
             <TripCard  
@@ -59,9 +61,7 @@ function Home(){
             price={trip.price}
             />
           ))}
-        </div>
-        <div>
-        </div>
+        </div>}
       </div>
     );
 }

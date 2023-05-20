@@ -23,6 +23,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/signup', [MyUserController::class , 'signup']);
 Route::post('planner/signup',[MyUserController::class , 'signupPlanner']);
 Route::get('reviews',[ReviewController::class,'index']);
-Route::get('trips/{n}',[TripController::class,'get4']);
+
+Route::get('trips/get4',[TripController::class,'get4']);
 Route::get('trips/{prompt}/get',[TripController::class,'search']);
-Route::get('trips/get',[TripController::class,'search']);
+Route::get('trips/get',[TripController::class,'index']);
+Route::get('planner/trips/{uid}',[TripController::class,'showTrips']);
+Route::get('planner/trips/{id}/destroy',[TripController::class,'destroy']);
+Route::post('planner/trips/create',[TripController::class,'store']);
+Route::get('trips/{id}/book',[TripController::class,'book']);
+Route::get('trips/{id}/unbook',[TripController::class,'unbook']);

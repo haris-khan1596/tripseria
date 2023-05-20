@@ -3,26 +3,36 @@ import Carousel from 'react-bootstrap/Carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar,faHeart } from '@fortawesome/free-solid-svg-icons';
 import numeral from 'numeral';
+import axios from 'axios';
+
 
 
 function TripCard(props) {
     const formattedPrice = numeral(props.price).format('₨0,0.00');
+    const url = new URL(localStorage.getItem('api'));
+    const baseUrl = url.origin;
     const handleSubmit = (event) => {
       event.preventDefault();  
       // handle api 
       // console.log(props);
-      if (localStorage.getItem('cart')) {
-        const cart=JSON.parse(localStorage.getItem('cart')).carts;
-        cart.push(JSON.stringify(props));
-        localStorage.setItem('cart',JSON.stringify({"carts":cart}));
-      } else {
-        const cart = [];
-        cart.push(JSON.stringify(props));
-        localStorage.setItem('cart',JSON.stringify({"carts":cart}));
-      }
-      
-      alert("Successfully booked");
-      
+      axios.get(`${localStorage.getItem('api')}trips/${props.id}/book`).then(
+        (response)=>{
+          const data=response.data;
+          if (data.message === 'Trip Booked Successfully') {
+          if (localStorage.getItem('cart')) {
+            const cart=JSON.parse(localStorage.getItem('cart')).carts;
+            cart.push(JSON.stringify(props));
+            localStorage.setItem('cart',JSON.stringify({"carts":cart}));
+          } else {
+            const cart = [];
+            cart.push(JSON.stringify(props));
+            localStorage.setItem('cart',JSON.stringify({"carts":cart}));
+          }
+        }          
+        alert(data.message);
+        }
+      );
+
     }
 
   return (
@@ -31,18 +41,18 @@ function TripCard(props) {
       <Carousel>
         <Carousel.Item>
             <div className="carousel-image-container">
-                <img className="d-block w-100" src={props.image1}  alt="First slide"/>
+                <img className="d-block w-100" src={props.image1.replace('public/', `${baseUrl}/storage/`)}  alt="First slide"/>
             </div>
             
         </Carousel.Item>
         <Carousel.Item>
         <div className="carousel-image-container">
-            <img className="d-block w-100" src={props.image2}  alt="Second slide"/>
+            <img className="d-block w-100" src={props.image2.replace('public/', `${baseUrl}/storage/`)}  alt="Second slide"/>
         </div>
         </Carousel.Item>
         <Carousel.Item>
             <div className="carousel-image-container">
-                <img className="d-block w-100" src={props.image3}  alt="third slide"/>
+                <img className="d-block w-100" src={props.image3.replace('public/', `${baseUrl}/storage/`)}  alt="third slide"/>
             </div>
         </Carousel.Item>
       </Carousel>

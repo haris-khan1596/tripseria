@@ -14,16 +14,14 @@ import Layout from './components/Layouts/Layout';
 import TripList  from './Views/TripList';
 import TravelPlanner from './Views/createTrip';
 import { isloggedIn, isplanner } from './helper';
-import UserProf from './Views/UserProfile';
-import PlannerProf from './Views/PlannerProfile';
+import CreateTrip from './Views/createTrip';
+import Profile from './Views/Profile';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 localStorage.setItem('token', "xjibfibuhfhbjnfnuzxnigkfdi");
-localStorage.setItem('isloggedIn',true);
-localStorage.setItem('isplanner',false);
-localStorage.setItem('user',null);
-localStorage.setItem('api',"http://10.7.92.226:8000/api");
+localStorage.setItem('api',"http://127.0.0.1:8000/api/");
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -36,10 +34,10 @@ root.render(
     <Route path='/search' element={<TripList/>}/>
     <Route path='/planner/signup' element={isloggedIn()?isplanner()?<Navigate to='/planner/profile' />:<Navigate to='/user/profile' />:<SignUp />}/>
     <Route path='/planner/trips' element={isloggedIn()&&isplanner() ?<TravelPlanner />:<Navigate to='/planner/signup' />}/>
-    <Route path='/planner/profile' element={<PlannerProf/>}/>
-    <Route path='/user/profile' element={<UserProf/>}/>
+    <Route path='/planner/profile' element={<Profile/>}/>
+    <Route path='/planner/create/trip' element={<CreateTrip/>}/>
+    <Route path='/user/profile' element={<Profile/>}/>
     <Route path='*' element={<Navigate to='/' />}/>
-  {/* <Route path='/user/profile' element={<UserProf />}/> */}
     </Routes>
     </BrowserRouter>
 

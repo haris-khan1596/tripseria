@@ -37,6 +37,7 @@ function TripList(){
         <div className="card-grid">
           {trips.map((trip) => (
             <TripCard
+            id={trip.id}
           image1="https://mir-s3-cdn-cf.behance.net/project_modules/1400/35ee6f84992701.5d6e870eac299.jpg"
           image2="https://mir-s3-cdn-cf.behance.net/project_modules/1400/9549e184992701.5d735663624f5.jpg"
           image3="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fd9ac684992701.5d6e870eac734.jpg"
