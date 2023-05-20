@@ -1,17 +1,19 @@
 .profile-container {
-    background-color: #4DBDFC;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    border-radius: 20px;
-    max-width: 400px;
-    position: relative;
-    top: 150px;
-    left: 650px;
+   display: flex;
+
+    
   }
   
   .profile {
     text-align: center;
+    padding: 20px;
+  
+    border: none;
+    border-right: 1px solid #dfd6d6;
+    max-width: 400px;
+    position: relative;
+    top: 100px;
+    left: 10px;
   }
   
   .profile-title {

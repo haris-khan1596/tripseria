@@ -15,7 +15,7 @@ import TripList  from './Views/TripList';
 import { isloggedIn, isplanner } from './helper';
 import CreateTrip from './Views/createTrip';
 import Profile from './Views/Profile';
-import PlannerTrips from './Views/PlannerTrips';
+import PlannerTrips from './components/PlannerTrips';
 
 
 

@@ -19,7 +19,9 @@ function PlannerTrips() {
       });
 
     return(
+
         <div className="planner-trips"> 
+            
             {trips.length===0? (
         <p>Loading...</p>
       ) : (

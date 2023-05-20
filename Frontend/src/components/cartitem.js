@@ -55,3 +55,4 @@ function CartModal(props){
 };
 
 export default CartModal;
+
