@@ -22,14 +22,17 @@ function CartItem(props){
               }}).then(()=>{props.close();}); 
     }
     return (<div className="cart-modal-item" key={item.id}>
-        <img src={item.image1} alt={item.planner} />
-        <div className="cart-modal-item-details">
+    <img src={item.image1} alt={item.planner} />
+    <div className="cart-modal-item-details">
+      <div className="item-details-header">
         <h3>{item.plannerName}</h3>
+        <button className='btn btn-sm btn-danger delete' onClick={handleunBook}><span id="boot-icon" class="bi bi-x"></span></button>
+      </div>
+      <div className="item-details-content">
         <p><strong>To:</strong> {item.To}</p>
         <p><strong>From:</strong> {item.From}</p>
-      <strong>PKR {formattedPrice}</strong>
-        <button className='btn btn-sm btn-danger' onClick={handleunBook}><span id="boot-icon" class="bi bi-x"></span></button>
-      
+        <strong>PKR {formattedPrice}</strong>
+      </div>
     </div>
     <hr/>
   </div>
@@ -41,10 +44,8 @@ function CartModal(props){
     // Render the CartModal without opening and closing functionality
     return (
       <div >
-        <div className="cart-modal-content">
-          <div className="cart-modal-header">
-            <h2>Cart</h2>
-          </div>
+        <div className="cart-content">
+          
           <div className="cart-modal-items">
             {cartItems.map((item, index) => (
               <CartItem item={item} index={index} close={props.onClose} />
