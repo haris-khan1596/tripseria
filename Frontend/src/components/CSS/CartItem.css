@@ -132,7 +132,24 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     position: relative;
+    top: 4rem;
     max-width: 70%;
     width: 100%;
   }
-
+  .cart-items {
+    display: grid;
+    grid-template-columns: 1fr; /* Set a single column */
+    gap: 20px;
+  }
+  
+  .cart-items > * {
+    grid-column: 1; /* Set the item to span the full column */
+  }
+  .cart-items .cart-modal-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+  }

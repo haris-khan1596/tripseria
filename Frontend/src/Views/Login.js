@@ -62,7 +62,6 @@ function Login() {
             Password:</label>
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             <br />
-          <div className="check-box"><label for="remember"><input id="remember" type="checkbox" name="remember"/>Remember me</label></div>
           
           <button type="submit">Login</button>
         </form>

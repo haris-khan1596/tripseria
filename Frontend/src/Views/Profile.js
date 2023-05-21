@@ -18,7 +18,7 @@ function Profile() {
           <div className="profile">
             <h2 className="profile-title">{userType} Profile</h2>
             <img
-              src="https://stock.adobe.com/images/default-avatar-profile-icon-vector-social-media-user-image/346839683"
+              src="https://img.freepik.com/free-icon/man_318-487775.jpg?size=626&ext=jpg"
               alt="Profile"
               className="profile-img"
             />
@@ -45,10 +45,10 @@ function Profile() {
               <PlannerTrips />
             </div>
           ) : (
-            <div>
+            <>
               <h2 className="profile-title">{userType} Trips</h2>
               <CartModal withFunctionality={false} />
-            </div>
+            </>
           )}
         </div>
       </div>

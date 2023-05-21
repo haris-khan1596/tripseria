@@ -26,7 +26,8 @@ function CartItem(props){
     <div className="cart-modal-item-details">
       <div className="item-details-header">
         <h3>{item.plannerName}</h3>
-        <button className='btn btn-sm btn-danger delete' onClick={handleunBook}><span id="boot-icon" class="bi bi-x"></span></button>
+        {props.withFunctionality!=="false"?<button className='btn btn-sm btn-danger delete' onClick={handleunBook}><span id="boot-icon" class="bi bi-x"></span></button>:<></>}
+        
       </div>
       <div className="item-details-content">
         <p><strong>To:</strong> {item.To}</p>
@@ -43,16 +44,15 @@ function CartModal(props){
   if (!props.withFunctionality) {
     // Render the CartModal without opening and closing functionality
     return (
-      <div >
+      
         <div className="cart-content">
           
-          <div className="cart-modal-items">
+          <div className="cart-items">
             {cartItems.map((item, index) => (
-              <CartItem item={item} index={index} close={props.onClose} />
+              <CartItem item={item} index={index} close={props.onClose} withFunctionality="false" />
             ))}
           </div>
         </div>
-      </div>
     );
   }
   // Render the CartModal with opening and closing functionality
