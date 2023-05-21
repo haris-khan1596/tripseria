@@ -39,7 +39,7 @@ function Profile() {
           </div>
         </div>
         <div className="content-container">
-          {isplanner ? (
+          {isplanner() ? (
             <div>
               <h2 className="profile-title">{userType} Trips</h2>
               <PlannerTrips />

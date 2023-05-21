@@ -22,19 +22,14 @@ function NavBar({ navbarLogo, links, navbarbtn }) {
   const renderNavbarButtons = () => {
     if (isUser()) {
       return (
-        <>
-          
-          <Nav.Link as={Link} to="/user/profile" className='navbar-item'><span className='navbar-item-text'>Profile</span></Nav.Link>
+          <>
           <button className='navbar-create-btn btn btn-primary' onClick={openCart}>Open Cart</button>
-          <CartModal withFunctionality={true} isOpen={isCartOpen} onClose={closeCart} />
-        </>
+          <CartModal withFunctionality={true} isOpen={isCartOpen} onClose={closeCart} /></>
       );
     } else if (isplanner()) {
       return (
-        <>
-        <Nav.Link as={Link} to="/planner/profile" className='navbar-item'><span className='navbar-item-text'>Profile</span></Nav.Link>
+        
         <Button variant="primary" as={Link} to="/planner/create/trip" className='navbar-create-btn'>Create New Trip</Button>
-        </>
       );
     } else {
       return null;
@@ -61,6 +56,7 @@ function NavBar({ navbarLogo, links, navbarbtn }) {
                   {links.map((link, index) => (
                     <Nav.Link key={index} as={Link} to={link.to} className='navbar-item'><span className='navbar-item-text'>{link.text}</span></Nav.Link>
                   ))}
+                  {isloggedIn()?<Nav.Link as={Link} to={isplanner()?'planner/profile':'user/profile'} className='navbar-item'><span className='navbar-item-text'>Profile</span></Nav.Link>:<span></span>}
                 </Nav>
                 {renderNavbarButtons()}
                 {navbarbtn.map((link, index) => (

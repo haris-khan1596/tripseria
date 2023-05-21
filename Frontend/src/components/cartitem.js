@@ -4,7 +4,7 @@ import numeral from 'numeral';
 import axios from 'axios';
 
 
-const cartItems=JSON.parse(localStorage.getItem('cart'))?JSON.parse(localStorage.getItem('cart')).carts:[];
+var cartItems=JSON.parse(localStorage.getItem('cart'))?JSON.parse(localStorage.getItem('cart')).carts:[];
 function CartItem(props){
     const item = JSON.parse(props.item);
     const formattedPrice = numeral(item.price).format('₨0,0.00');
@@ -36,10 +36,11 @@ function CartItem(props){
   );
 }
 function CartModal(props){
+    cartItems=JSON.parse(localStorage.getItem('cart'))?JSON.parse(localStorage.getItem('cart')).carts:[];
   if (!props.withFunctionality) {
     // Render the CartModal without opening and closing functionality
     return (
-      <div className={`cart-modal ${props.isOpen ? 'open' : ''}`}>
+      <div >
         <div className="cart-modal-content">
           <div className="cart-modal-header">
             <h2>Cart</h2>

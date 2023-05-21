@@ -2,7 +2,7 @@ import '../App.css';
 import TripCard from '../components/TripCard';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import preloader from '../components/Preloader';
 
 
 
@@ -33,19 +33,16 @@ function Home(){
     fetchData();
   }, []);
     return(
-      <div>
-        <div className='trip-home'> 
-          <form action="/trips" method="get"><div id="Srchbar"><i class="bi bi-question-circle"></i><input type='text' name="query" placeholder="Where you want to go?"/><button>Search Location</button></div></form>
-          <h2 >Trips</h2></div>
+        <div>
         <div style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-        height: "100%"
-      }}>
-          
-          
+          height: "100%"
+        }}>
+          <h2 >Trips</h2>
         </div>
+        <form action="/trips" method="get"><div id='Srchbar'><i class="bi bi-question-circle"></i><input type='text' name="query" placeholder="Where you want to go?"/><button>Search Location</button></div></form>
 
         {trips.length===0?<preloader/>:
         <div className="card-grid">
