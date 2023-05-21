@@ -154,6 +154,7 @@
 
 .navbar-item {
   margin-left: 20px;
+  margin-right: 20px; /* Add this line for right margin */
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -376,4 +377,15 @@ ul li {
 .trip-home {
  display: inline-flex;
  gap: 470px;
+}
+
+/*layout.js*/
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }

@@ -1,10 +1,11 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Button } from 'react-bootstrap';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import CartModal from './cartitem';
+import { isloggedIn, isUser, isplanner } from '../helper';
 
 
 function NavBar({ navbarLogo, links, navbarbtn }) {
@@ -17,6 +18,29 @@ function NavBar({ navbarLogo, links, navbarbtn }) {
   const closeCart = () => {
     setIsCartOpen(false);
   };
+
+  const renderNavbarButtons = () => {
+    if (isUser()) {
+      return (
+        <>
+          
+          <Nav.Link as={Link} to="/user/profile" className='navbar-item'><span className='navbar-item-text'>Profile</span></Nav.Link>
+          <button className='navbar-create-btn btn btn-primary' onClick={openCart}>Open Cart</button>
+          <CartModal withFunctionality={true} isOpen={isCartOpen} onClose={closeCart} />
+        </>
+      );
+    } else if (isplanner()) {
+      return (
+        <>
+        <Nav.Link as={Link} to="/planner/profile" className='navbar-item'><span className='navbar-item-text'>Profile</span></Nav.Link>
+        <Button variant="primary" as={Link} to="/planner/create/trip" className='navbar-create-btn'>Create New Trip</Button>
+        </>
+      );
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div>
       <Navbar key="lg" expand="lg" className="mb-3 fixed-top">
@@ -29,8 +53,7 @@ function NavBar({ navbarLogo, links, navbarbtn }) {
             placement="end"
           >
             <Offcanvas.Header closeButton>
-              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-              </Offcanvas.Title>
+              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Navbar.Collapse id="responsive-navbar-nav">
@@ -39,19 +62,17 @@ function NavBar({ navbarLogo, links, navbarbtn }) {
                     <Nav.Link key={index} as={Link} to={link.to} className='navbar-item'><span className='navbar-item-text'>{link.text}</span></Nav.Link>
                   ))}
                 </Nav>
-                <button className='navbar-create-btn btn btn-primary' onClick={openCart}>Open Cart</button>
-                <CartModal isOpen={isCartOpen} onClose={closeCart}/>
-                {navbarbtn.map((link, index) =>(
-                <Button variant="primary" as={Link} to={link.to} className='navbar-create-btn'>{link.text}</Button>))}
+                {renderNavbarButtons()}
+                {navbarbtn.map((link, index) => (
+                  <Button variant="primary" as={Link} to={link.to} className='navbar-create-btn' key={index}>{link.text}</Button>
+                ))}
               </Navbar.Collapse>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
-      
     </div>
   );
 };
-
 
 export default NavBar;

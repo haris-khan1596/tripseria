@@ -36,6 +36,24 @@ function CartItem(props){
   );
 }
 function CartModal(props){
+  if (!props.withFunctionality) {
+    // Render the CartModal without opening and closing functionality
+    return (
+      <div className={`cart-modal ${props.isOpen ? 'open' : ''}`}>
+        <div className="cart-modal-content">
+          <div className="cart-modal-header">
+            <h2>Cart</h2>
+          </div>
+          <div className="cart-modal-items">
+            {cartItems.map((item, index) => (
+              <CartItem item={item} index={index} close={props.onClose} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  // Render the CartModal with opening and closing functionality
   return (
     <div className={`cart-modal ${props.isOpen ? 'open' : ''}`}>
       <div className="cart-modal-overlay" onClick={props.onClose} />

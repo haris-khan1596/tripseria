@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import React, { useState } from "react";
-import "./CSS/PlannerTrips.css";
+
 
 function PlannerTrips() {
     const [trips, setTrips] = useState([]);
