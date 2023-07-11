@@ -18,18 +18,26 @@ function NavBar({ navbarLogo, links, navbarbtn }) {
   const closeCart = () => {
     setIsCartOpen(false);
   };
+  const logout=()=> {
+    window.open(`${window.location.origin}`,`_self`);
+    localStorage.removeItem('user');
+    localStorage.removeItem('isloggedIn');
+    localStorage.removeItem('isplanner');
+      };
 
   const renderNavbarButtons = () => {
     if (isUser()) {
       return (
           <>
           <button className='navbar-create-btn btn btn-primary' onClick={openCart}>Open Cart</button>
-          <CartModal withFunctionality={true} isOpen={isCartOpen} onClose={closeCart} /></>
+          <CartModal withFunctionality={true} isOpen={isCartOpen} onClose={closeCart} />
+          <button className='navbar-create-btn btn btn-primary' onClick={logout}>Logout</button></>
       );
     } else if (isplanner()) {
       return (
-        
+        <>
         <Button variant="primary" as={Link} to="/planner/create/trip" className='navbar-create-btn'>Create New Trip</Button>
+        <button className='navbar-create-btn btn btn-primary' onClick={logout}>Logout</button></>
       );
     } else {
       return null;

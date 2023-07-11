@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); 
 /*Hero section*/
 #hero{
-    background: url('http://localhost:3000/Assets/hero.jpeg');
+    background: url('http://10.7.93.251:3000/Assets/hero.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

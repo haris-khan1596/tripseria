@@ -21,7 +21,7 @@ import PlannerTrips from './components/PlannerTrips';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 localStorage.setItem('token', "xjibfibuhfhbjnfnuzxnigkfdi");
-localStorage.setItem('api',"http://127.0.0.1:8000/api/");
+localStorage.setItem('api',"http://10.7.93.251:8000/api/");
 root.render(
   <React.StrictMode>
     <BrowserRouter>

@@ -29,6 +29,7 @@ function Login() {
         })
       .then((data) => {
         // Handle the response from the server
+        window.open(`${window.location.origin}/login`,`_self`);
         localStorage.setItem('isloggedIn',true);
         localStorage.setItem('isplanner',data.isplanner);
         localStorage.setItem('user',JSON.stringify(data.user));
